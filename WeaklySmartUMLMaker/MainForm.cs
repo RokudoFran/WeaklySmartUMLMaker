@@ -54,6 +54,9 @@ namespace WeaklySmartUMLMaker
                     case "Rectangle":
                         abstructFigure = new Rectangle(pen, grafTemporary);
                         break;
+                    case "CreateNewClassButton":
+                        abstructFigure = new CreateNewClass(pen, grafTemporary);
+                        break;
                     case "FillArrow":
                         abstructFigure = new FillArrow(pen, grafTemporary);
                         break;
@@ -96,6 +99,9 @@ namespace WeaklySmartUMLMaker
             {
                 case "Rectangle":
                     abstructFigure = new Rectangle(pen, graf);
+                    break;
+                case "CreateNewClassButton":
+                    abstructFigure = new CreateNewClass(pen, graf);
                     break;
                 case "FillArrow":
                     abstructFigure = new FillArrow(pen, graf);
@@ -156,9 +162,10 @@ namespace WeaklySmartUMLMaker
             _act = "Rectangle";
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
+        private void CreateNewClassButton_Click(object sender, EventArgs e)
+        {
+            _act = "CreateNewClassButton";
         }
     }
 }
