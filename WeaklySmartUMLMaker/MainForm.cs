@@ -167,5 +167,12 @@ namespace WeaklySmartUMLMaker
         {
             _act = "CreateNewClassButton";
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            _tmpBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.Image = _mainBitmap;
+        }
     }
 }
