@@ -13,13 +13,15 @@ namespace WeaklySmartUMLMaker
 {
     public class AggregationPolygon : AbstructFigure
     {
-        public AggregationPolygon(Pen pen, Graphics graphics)
-            : base(pen, graphics)
+        public AggregationPolygon()
+            : base()
         {
         }
         public override void Draw(Point start, Point finish)
         {
-            //вызови класс в который запихваются старт и финиш поинт
+            var pen = Holst.Instanse.Pen;
+            var gr = Holst.Instanse.Graphics;
+
             int width = 15;
             int height = 24;
 
@@ -44,7 +46,7 @@ namespace WeaklySmartUMLMaker
             float Y1 = start.Y;
             float X2 = finish.X;
             float Y2 = finish.Y;
-            Graphics.DrawLine(Pen, X1, Y1, Convert.ToInt32(X6), Convert.ToInt32(Y6));
+            gr.DrawLine(pen, X1, Y1, Convert.ToInt32(X6), Convert.ToInt32(Y6));
             //pen.DashStyle = DashStyle.Solid; 
 
             Point point1 = new Point(Convert.ToInt32(X2), Convert.ToInt32(Y2));
@@ -54,7 +56,7 @@ namespace WeaklySmartUMLMaker
             Point[] curvePoints = { point1, point2, point3, point4 };
 
             // Draw polygon to screen. 
-            Graphics.DrawPolygon(Pen, curvePoints);
+            gr.DrawPolygon(pen, curvePoints);
         }
     }
 }
