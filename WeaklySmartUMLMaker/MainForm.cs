@@ -69,7 +69,7 @@ namespace WeaklySmartUMLMaker
 
             SolidBrush blackBrush = new SolidBrush(Color.Black);
             grafTemporary.Clear(Color.White);
-            AbstructFigure abstructFigure = null;
+            AbstructFigure abstructFigure;
             if (e.Button == MouseButtons.Left)
             {
                 switch (_crntArrow)

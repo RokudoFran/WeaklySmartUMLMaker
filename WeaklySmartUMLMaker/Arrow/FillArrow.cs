@@ -14,17 +14,20 @@ namespace WeaklySmartUMLMaker
     public class FillArrow : AbstructFigure
     {
         public FillArrow()
-            : base(pen, graphics)
+            : base()
         {
         }
 
         public override void Draw(Point start, Point finish)
         {
+            var pen = Holst.Instanse.Pen;
+            var gr = Holst.Instanse.Graphics;
+
             int width = 15;
             int height = 12;
 
-            .CustomEndCap = new AdjustableArrowCap(width, height);
-            Graphics.DrawLine(Pen, start.X, start.Y, finish.X, finish.Y);
+            pen.CustomEndCap = new AdjustableArrowCap(width, height);
+            gr.DrawLine(pen, start.X, start.Y, finish.X, finish.Y);
 
         }
     }
