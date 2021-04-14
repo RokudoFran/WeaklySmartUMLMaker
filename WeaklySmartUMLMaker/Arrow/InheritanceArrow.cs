@@ -13,12 +13,16 @@ namespace WeaklySmartUMLMaker
 {
     public class InheritanceArrow : AbstructFigure
     {
-        public InheritanceArrow(Pen pen, Graphics graphics)
-            : base(pen, graphics)
+        public InheritanceArrow()
+            : base()
         {
         }
         public override void Draw(Point start, Point finish)
         {
+            var pen = Holst.Instanse.Pen;
+            var gr = Holst.Instanse.Graphics;
+
+
             int width = 15;
             int height = 24;
 
@@ -43,14 +47,14 @@ namespace WeaklySmartUMLMaker
             float Y2 = finish.Y;
             X2 = X3;
             Y2 = Y3;
-            Graphics.DrawLine(Pen, X1, Y1, X2, Y2);
+            gr.DrawLine(pen, X1, Y1, X2, Y2);
 
 
             X1 = finish.X;
             Y1 = finish.Y;
             X2 = X4;
             Y2 = Y4;
-            Graphics.DrawLine(Pen, X1, Y1, X2, Y2);
+            gr.DrawLine(pen, X1, Y1, X2, Y2);
             float xl = X2;
             float yl = Y2;
 
@@ -58,8 +62,8 @@ namespace WeaklySmartUMLMaker
             Y1 = finish.Y;
             X2 = X5;
             Y2 = Y5;
-            Graphics.DrawLine(Pen, X1, Y1, X2, Y2);
-            Graphics.DrawLine(Pen, xl, yl, X2, Y2);
+            gr.DrawLine(pen, X1, Y1, X2, Y2);
+            gr.DrawLine(pen, xl, yl, X2, Y2);
         }
 
     }

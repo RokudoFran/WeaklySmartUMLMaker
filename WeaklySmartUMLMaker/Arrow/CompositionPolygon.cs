@@ -17,11 +17,14 @@ namespace WeaklySmartUMLMaker
 
         SolidBrush blackBrush = new SolidBrush(Color.Black);
         public CompositionPolygon(Pen pen, Graphics graphics, SolidBrush brush)
-            : base(pen, graphics)
+            : base()
         {
         }
         public override void Draw(Point start, Point finish)
         {
+            var pen = Holst.Instanse.Pen;
+            var gr = Holst.Instanse.Graphics;
+
             int width = 15;
             int height = 24;
 
@@ -52,7 +55,7 @@ namespace WeaklySmartUMLMaker
             float Y1 = start.Y;
             float X2 = finish.X;
             float Y2 = finish.Y;
-            Graphics.DrawLine(Pen, X1, Y1, X6, Y6);
+            gr.DrawLine(pen, X1, Y1, X6, Y6);
             //pen.DashStyle = DashStyle.Solid; 
 
             Point point1 = new Point(Convert.ToInt32(X2), Convert.ToInt32(Y2));

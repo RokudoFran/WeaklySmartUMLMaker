@@ -8,27 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WeaklySmartUMLMaker
 {
-    public class FillArrow : AbstructFigure
+    public class Rectangle : AbstructFigure
     {
-        public FillArrow()
+        public Rectangle()
             : base()
         {
         }
 
         public override void Draw(Point start, Point finish)
         {
-            var pen = Holst.Instanse.Pen;
-            var gr = Holst.Instanse.Graphics;
-
-            int width = 15;
-            int height = 12;
-
-            pen.CustomEndCap = new AdjustableArrowCap(width, height);
-            gr.DrawLine(pen, start.X, start.Y, finish.X, finish.Y);
-
+            Holst.Instanse.Graphics.DrawRectangle(Holst.Instanse.Pen,
+                start.X, start.Y, (finish.X - start.X), (finish.Y - start.Y));
         }
     }
 }

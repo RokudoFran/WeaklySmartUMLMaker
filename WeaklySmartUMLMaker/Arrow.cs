@@ -13,7 +13,7 @@ namespace WeaklySmartUMLMaker
 {
     public abstract class Arrow : AbstructFigure
     {
-        protected Arrow(Pen pen, Graphics graphics) : base(pen, graphics)
+        protected Arrow() : base()
         {
         }
         
