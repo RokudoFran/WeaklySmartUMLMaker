@@ -13,13 +13,10 @@ namespace WeaklySmartUMLMaker
 {
     public abstract class AbstructFigure
     {
-        public Pen Pen { get; set; }
-        public Graphics Graphics { get; set; }
 
-        public AbstructFigure(Pen pen, Graphics graphics)
+        public AbstructFigure()
         {
-            Pen = pen;
-            Graphics = graphics;
+          
         }
 
         public abstract void Draw(Point start, Point finish);

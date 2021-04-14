@@ -11,13 +11,35 @@ using System.Windows.Forms;
 
 namespace WeaklySmartUMLMaker
 {
+    public enum ActionType
+    {
+        FillArrow,
+        Inheritance,
+        Association,
+        Realization,
+        Composition,
+        Aggregation,
+        Rectangle,
+        CreateNewClass
+
+    }
+
+
     public partial class MainForm : Form
     {
         Bitmap _mainBitmap;
         Bitmap _tmpBitmap;
-
+        Graphics _graphics;
+        bool _isButtonPressed = false;
         Point startPoint;
-        string _act;
+        Pen pen;
+        //ArrowList arrowType;
+        bool isMove = false;
+        AbstructFigure _crntArrowQQQ;
+        ActionType _crntArrow;
+        //List<ArrowList> arrows;
+        FigureFabric _fabric;
+
 
         public MainForm()
         {
@@ -26,9 +48,10 @@ namespace WeaklySmartUMLMaker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //arrows = new List<ArrowList>();
             _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             _tmpBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _act = "FillArrow";
+            _crntArrow = ActionType.FillArrow;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -49,41 +72,42 @@ namespace WeaklySmartUMLMaker
             AbstructFigure abstructFigure = null;
             if (e.Button == MouseButtons.Left)
             {
-                switch (_act)
+                switch (_crntArrow)
                 {
-                    case "Rectangle":
-                        abstructFigure = new Rectangle(pen, grafTemporary);
+                    case ActionType.Rectangle:
+                        _fabric = new RectangleFabric();
                         break;
-                    case "CreateNewClassButton":
-                        abstructFigure = new CreateNewClass(pen, grafTemporary);
+                    case ActionType.CreateNewClass:
+                        _fabric = new CreateNewClassFabric();
                         break;
-                    case "FillArrow":
-                        abstructFigure = new FillArrow(pen, grafTemporary);
+                    case ActionType.FillArrow:
+                        _fabric = new FillArrowFabric();
                         break;
-                    case "Inheritance":
-                        abstructFigure = new InheritanceArrow(pen, grafTemporary);
+                    case ActionType.Inheritance:
+                        _fabric = new InheritanceFabric();
                         break;
-                    case "Association":
-                        abstructFigure = new AssociationArrow(pen, grafTemporary);
+                    case ActionType.Association:
+                        _fabric = new AssociationFabric();
                         break;
-                    case "Realization":
-                        abstructFigure = new RealizationArrow(pen, grafTemporary);
+                    case ActionType.Realization:
+                        _fabric = new RealizationFabric();
                         break;
-                    case "Composition":
-                        abstructFigure = new CompositionPolygon(pen, grafTemporary, blackBrush);
+                    case ActionType.Composition:
+                        _fabric = new AssociationFabric();
                         break;
-                    case "Aggregation":
-                        abstructFigure = new AggregationPolygon(pen, grafTemporary);
+                    case ActionType.Aggregation:
+                        _fabric = new AggregationPolygonFabric();
                         break;
                 }
-                if (abstructFigure != null)
+                if (_fabric != null)
                 {
-                    abstructFigure.Draw(startPoint, e.Location);
+                    _fabric.Draw(startPoint, e.Location);
                 }
                 grafTemporary.DrawImage(_mainBitmap, 0, 0);
 
                 pictureBox1.Image = _tmpBitmap;
             }
+
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -95,77 +119,77 @@ namespace WeaklySmartUMLMaker
             SolidBrush blackBrush = new SolidBrush(Color.Black);
             AbstructFigure abstructFigure = null;
 
-            switch (_act)
+            switch (_crntArrow)
             {
-                case "Rectangle":
-                    abstructFigure = new Rectangle(pen, graf);
+                case ActionType.Rectangle:
+                    _fabric = new RectangleFabric();
                     break;
-                case "CreateNewClassButton":
-                    abstructFigure = new CreateNewClass(pen, graf);
+                case ActionType.CreateNewClass:
+                    _fabric = new CreateNewClassFabric();
                     break;
-                case "FillArrow":
-                    abstructFigure = new FillArrow(pen, graf);
+                case ActionType.FillArrow:
+                    _fabric = new FillArrowFabric();
                     break;
-                case "Inheritance":
-                    abstructFigure = new InheritanceArrow(pen, graf);
+                case ActionType.Inheritance:
+                    _fabric = new InheritanceFabric();
                     break;
-                case "Association":
-                    abstructFigure = new AssociationArrow(pen, graf);
+                case ActionType.Association:
+                    _fabric = new AssociationFabric();
                     break;
-                case "Realization":
-                    abstructFigure = new RealizationArrow(pen, graf);
+                case ActionType.Realization:
+                    _fabric = new RealizationFabric();
                     break;
-                case "Composition":
-                    abstructFigure = new CompositionPolygon(pen, graf, blackBrush);
+                case ActionType.Composition:
+                    _fabric = new AssociationFabric();
                     break;
-                case "Aggregation":
-                    abstructFigure = new AggregationPolygon(pen, graf);
+                case ActionType.Aggregation:
+                    _fabric = new AggregationPolygonFabric();
                     break;
             }
             if (abstructFigure != null)
             {
                 abstructFigure.Draw(startPoint, e.Location);
+
             }
         }
 
         private void buttonFillArrow_Click(object sender, EventArgs e)
         {
-            _act = "FillArrow";
+            _crntArrow = ActionType.FillArrow;
         }
 
         private void buttonInheritance_Click(object sender, EventArgs e)
         {
-            _act = "Inheritance";
+            _crntArrow = ActionType.Inheritance;
         }
 
         private void buttonAssociation_Click(object sender, EventArgs e)
         {
-            _act = "Association";
+            _crntArrow = ActionType.Association;
         }
 
         private void buttonRealization_Click(object sender, EventArgs e)
         {
-            _act = "Realization";
+            _crntArrow = ActionType.Realization;
         }
 
         private void buttonComposition_Click(object sender, EventArgs e)
         {
-            _act = "Composition";
+            _crntArrow = ActionType.Composition;
         }
 
         private void buttonAggregation_Click(object sender, EventArgs e)
         {
-            _act = "Aggregation";
+            _crntArrow = ActionType.Aggregation;
         }
         private void buttonRectangle_Click(object sender, EventArgs e)
         {
-            _act = "Rectangle";
+            _crntArrow = ActionType.Rectangle;
         }
-
 
         private void CreateNewClassButton_Click(object sender, EventArgs e)
         {
-            _act = "CreateNewClassButton";
+            _crntArrow = ActionType.CreateNewClass;
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -173,6 +197,8 @@ namespace WeaklySmartUMLMaker
             _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             _tmpBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = _mainBitmap;
+
+
         }
     }
 }

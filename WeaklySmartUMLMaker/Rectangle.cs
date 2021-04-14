@@ -12,14 +12,15 @@ namespace WeaklySmartUMLMaker
 {
     public class Rectangle : AbstructFigure
     {
-        public Rectangle(Pen pen, Graphics graphics)
-            : base(pen, graphics)
+        public Rectangle()
+            : base()
         {
         }
 
         public override void Draw(Point start, Point finish)
         {
-            Graphics.DrawRectangle(Pen, start.X, start.Y, (finish.X - start.X), (finish.Y - start.Y));
+            Holst.Instanse.Graphics.DrawRectangle(Holst.Instanse.Pen,
+                start.X, start.Y, (finish.X - start.X), (finish.Y - start.Y));
         }
     }
 }
