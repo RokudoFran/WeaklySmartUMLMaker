@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace WeaklySmartUMLMaker.Fabrics
 {
-    class RectangleFabric
-    {
-        public class RectangleFabric : FigureFabric
+    public class RectangleFabric : FigureFabric
+    {    
+        protected override AbstructFigure CreateFigure()
         {
-            protected override AbstructFigure CreateFigure()
-            {
-                return new RealizationArrow();
-            }
+            return new RealizationArrow();
         }
     }
 }

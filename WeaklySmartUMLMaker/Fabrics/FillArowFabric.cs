@@ -14,3 +14,4 @@ namespace WeaklySmartUMLMaker.Fabrics
             return new FillArrow();
         }
     }
+}
