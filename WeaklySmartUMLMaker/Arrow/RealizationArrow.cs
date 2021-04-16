@@ -19,8 +19,8 @@ namespace WeaklySmartUMLMaker
         }
         public override void Draw(Point start, Point finish)
         {
-            var pen = Holst.Instanse.Pen;
-            var gr = Holst.Instanse.Graphics;
+            var pen = Holst.holstPen;
+            var gr = Holst.holstGraphics;
 
             int width = 15;
             int height = 24;

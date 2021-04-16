@@ -11,7 +11,7 @@ namespace WeaklySmartUMLMaker.Fabrics
     {
         protected override AbstructFigure CreateFigure()
         {
-            return new InheritanceArrow(Holst.Instanse.Pen, Holst.Instanse.Graphics);
+            return new InheritanceArrow();
         }
     }
 }

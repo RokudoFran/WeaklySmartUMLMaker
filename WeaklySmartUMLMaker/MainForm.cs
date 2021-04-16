@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WeaklySmartUMLMaker
 {
     public enum ActionType
     {
-        FillArrow,
         Inheritance,
         Association,
         Realization,
@@ -21,24 +21,15 @@ namespace WeaklySmartUMLMaker
         Aggregation,
         Rectangle,
         CreateNewClass
-
     }
 
 
     public partial class MainForm : Form
     {
-        Bitmap _mainBitmap;
-        Bitmap _tmpBitmap;
-        Graphics _graphics;
-        bool _isButtonPressed = false;
         Point startPoint;
-        Pen pen;
-        //ArrowList arrowType;
-        bool isMove = false;
-        AbstructFigure _crntArrowQQQ;
         ActionType _crntArrow;
-        //List<ArrowList> arrows;
         FigureFabric _fabric;
+        Holst _holst;
 
 
         public MainForm()
@@ -48,116 +39,43 @@ namespace WeaklySmartUMLMaker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //arrows = new List<ArrowList>();
-            _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _tmpBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _crntArrow = ActionType.FillArrow;
+            _holst=Holst.GetHolst();
+            _holst.SetPictureBox(pictureBox1);
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             startPoint = e.Location;
+            cretFabric();
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            Pen pen;
-            pen = new Pen(Color.Black);
-
-            Graphics grafTemporary;
-            grafTemporary = Graphics.FromImage(_tmpBitmap);
-
-            SolidBrush blackBrush = new SolidBrush(Color.Black);
-            grafTemporary.Clear(Color.White);
-            AbstructFigure abstructFigure;
             if (e.Button == MouseButtons.Left)
             {
-                switch (_crntArrow)
-                {
-                    case ActionType.Rectangle:
-                        _fabric = new RectangleFabric();
-                        break;
-                    case ActionType.CreateNewClass:
-                        _fabric = new CreateNewClassFabric();
-                        break;
-                    case ActionType.FillArrow:
-                        _fabric = new FillArrowFabric();
-                        break;
-                    case ActionType.Inheritance:
-                        _fabric = new InheritanceFabric();
-                        break;
-                    case ActionType.Association:
-                        _fabric = new AssociationFabric();
-                        break;
-                    case ActionType.Realization:
-                        _fabric = new RealizationFabric();
-                        break;
-                    case ActionType.Composition:
-                        _fabric = new AssociationFabric();
-                        break;
-                    case ActionType.Aggregation:
-                        _fabric = new AggregationPolygonFabric();
-                        break;
-                }
+                _holst.GetGraphics();
+
                 if (_fabric != null)
                 {
                     _fabric.Draw(startPoint, e.Location);
                 }
-                grafTemporary.DrawImage(_mainBitmap, 0, 0);
 
-                pictureBox1.Image = _tmpBitmap;
+                _holst.UpdatePictureBox();
             }
-
+            
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            Pen pen;
-            pen = new Pen(Color.Black);
-            Graphics graf;
-            graf = Graphics.FromImage(_mainBitmap);
-            SolidBrush blackBrush = new SolidBrush(Color.Black);
-            AbstructFigure abstructFigure = null;
-
-            switch (_crntArrow)
-            {
-                case ActionType.Rectangle:
-                    _fabric = new RectangleFabric();
-                    break;
-                case ActionType.CreateNewClass:
-                    _fabric = new CreateNewClassFabric();
-                    break;
-                case ActionType.FillArrow:
-                    _fabric = new FillArrowFabric();
-                    break;
-                case ActionType.Inheritance:
-                    _fabric = new InheritanceFabric();
-                    break;
-                case ActionType.Association:
-                    _fabric = new AssociationFabric();
-                    break;
-                case ActionType.Realization:
-                    _fabric = new RealizationFabric();
-                    break;
-                case ActionType.Composition:
-                    _fabric = new AssociationFabric();
-                    break;
-                case ActionType.Aggregation:
-                    _fabric = new AggregationPolygonFabric();
-                    break;
-            }
-            if (abstructFigure != null)
-            {
-                abstructFigure.Draw(startPoint, e.Location);
-
-            }
+            _holst.UpdateBitmap();
         }
 
-        private void buttonFillArrow_Click(object sender, EventArgs e)
+        private void cretFabric()
         {
-            _crntArrow = ActionType.FillArrow;
+            _fabric = FigureFabricCreator.GetFabric(_crntArrow);
         }
 
+        
         private void buttonInheritance_Click(object sender, EventArgs e)
         {
             _crntArrow = ActionType.Inheritance;
@@ -194,11 +112,7 @@ namespace WeaklySmartUMLMaker
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _tmpBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            pictureBox1.Image = _mainBitmap;
-
-
+            _holst.Clear();
         }
     }
 }
