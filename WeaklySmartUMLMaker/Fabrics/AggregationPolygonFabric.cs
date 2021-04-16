@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WeaklySmartUMLMaker.Fabrics
 {
@@ -10,7 +15,7 @@ namespace WeaklySmartUMLMaker.Fabrics
     {
         protected override AbstructFigure CreateFigure()
         {
-            return new AggregationPolygon(Holst.Instanse.Pen, Holst.Instanse.Graphics);
+            return new AggregationPolygon();
         }
     }
 }

@@ -11,30 +11,15 @@ namespace WeaklySmartUMLMaker
     {
         protected abstract AbstructFigure CreateFigure();
 
+        private AbstructFigure _figure;
+
         public void Draw(Point start, Point finish)
         {
-            AbstructFigure figure = CreateFigure();
-            figure.Draw(start, finish);
+            if(_figure == null)
+                _figure = CreateFigure();
+
+            _figure.Draw(start, finish);
         }
         
     }
-
-
-    public class RectangleFabric : FigureFabric
-    {
-        protected override AbstructFigure CreateFigure()
-        {
-            return new RealizationArrow();
-        }
-    }
-
-    public class CreateNewClassFabric : FigureFabric
-    {
-        protected override AbstructFigure CreateFigure()
-        {
-            return new RealizationArrow();
-        }
-    }
-
-
 }

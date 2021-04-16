@@ -16,14 +16,14 @@ namespace WeaklySmartUMLMaker
         private Brush Brush { get; set; }
 
         SolidBrush blackBrush = new SolidBrush(Color.Black);
-        public CompositionPolygon(Pen pen, Graphics graphics, SolidBrush brush)
+        public CompositionPolygon()
             : base()
         {
         }
         public override void Draw(Point start, Point finish)
         {
-            var pen = Holst.Instanse.Pen;
-            var gr = Holst.Instanse.Graphics;
+            var pen = Holst.holstPen;
+            var gr = Holst.holstGraphics;
 
             int width = 15;
             int height = 24;
@@ -66,7 +66,7 @@ namespace WeaklySmartUMLMaker
 
             // Draw polygon to screen. 
             //SolidBrush blackBrush = new SolidBrush(Color.Black);
-            Graphics.FillPolygon(blackBrush, curvePoints);
+            gr.FillPolygon(blackBrush, curvePoints);
         }
     }
 }

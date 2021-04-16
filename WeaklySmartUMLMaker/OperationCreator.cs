@@ -3,36 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeaklySmartUMLMaker.Fabrics;
 
 namespace WeaklySmartUMLMaker
 {
-    class OperationCreator
+    public static class FigureFabricCreator
     {
-        
-        
-            private Dictionary<Type, IBitmapOperation> _operations = new Dictionary<Type, IBitmapOperation>() 
+
+
+        private static Dictionary<ActionType, Type> _operations = new Dictionary<ActionType, Type>()
             {
-                {typeof(SizeOperationParameter), new ResizeBitmapOperation() },
-            
-                {typeof(ClearOperationParameters), new ClearBitmapOperation() },
-            
-                {typeof(CancelLastActionParameter), new CancelLastActionOperation() },
-            
-                {typeof(SaveBitmapOperationParameters), new SaveBitmapOperation() },
-            
-                {typeof(ChangeBackgroundColorOperationParameters), new ChangeBackgroundColorOperation() },
-            
-                {typeof(DrawFigureOperationParameters), new DrawFigureOperation() },
-            
-                {typeof(DrawAllFigureOperationParameters), new DrawAllFigureOperation() },
-            
-                {typeof(EndDrawOperationParameters), new EndDrawOperation() }
+                {ActionType.Aggregation, typeof( AggregationPolygonFabric) },
+                {ActionType.Association, typeof( AssociationFabric) },
+                {ActionType.Composition, typeof( CompositionFabric) },
+                {ActionType.CreateNewClass, typeof( CreateNewClassFabric) },
+                {ActionType.Inheritance, typeof( InheritanceFabric) },
+                {ActionType.Realization, typeof( RealizationFabric) },
+                {ActionType.Rectangle, typeof( RectangleFabric) },
             };
 
-            public IBitmapOperation GetOperation(Type type)
-            {
-                return _operations[type];
-            }
- 
+        public static FigureFabric GetFabric(ActionType type)
+        {
+            return (FigureFabric)Activator.CreateInstance(_operations[type]);
+        }
+
     }
 }

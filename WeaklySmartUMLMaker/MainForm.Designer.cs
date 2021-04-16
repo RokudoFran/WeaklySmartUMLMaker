@@ -29,7 +29,6 @@ namespace WeaklySmartUMLMaker
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonFillArrow = new System.Windows.Forms.Button();
             this.buttonInheritance = new System.Windows.Forms.Button();
             this.buttonAssociation = new System.Windows.Forms.Button();
             this.buttonRealization = new System.Windows.Forms.Button();
@@ -38,200 +37,107 @@ namespace WeaklySmartUMLMaker
             this.buttonRectangle = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CreateNewClassButton = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.Clearbutton = new System.Windows.Forms.Button();
-
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            
-            // 
-            // buttonFillArrow
-            // 
-            this.buttonFillArrow.Location = new System.Drawing.Point(18, 20);
-            this.buttonFillArrow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonFillArrow.Name = "buttonFillArrow";
-            this.buttonFillArrow.Size = new System.Drawing.Size(146, 51);
-            this.buttonFillArrow.Location = new System.Drawing.Point(14, 16);
-            this.buttonFillArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonFillArrow.Name = "buttonFillArrow";
-            this.buttonFillArrow.Size = new System.Drawing.Size(117, 41);
-            this.buttonFillArrow.TabIndex = 0;
-            this.buttonFillArrow.Text = "Fill Arrow";
-            this.buttonFillArrow.UseVisualStyleBackColor = true;
-            this.buttonFillArrow.Click += new System.EventHandler(this.buttonFillArrow_Click);
-            
             // 
             // buttonInheritance
             // 
-            this.buttonInheritance.Location = new System.Drawing.Point(18, 81);
-            this.buttonInheritance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonInheritance.Location = new System.Drawing.Point(12, 49);
             this.buttonInheritance.Name = "buttonInheritance";
-            this.buttonInheritance.Size = new System.Drawing.Size(146, 51);
-            this.buttonInheritance.Location = new System.Drawing.Point(14, 65);
-            this.buttonInheritance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonInheritance.Name = "buttonInheritance";
-            this.buttonInheritance.Size = new System.Drawing.Size(117, 41);
+            this.buttonInheritance.Size = new System.Drawing.Size(102, 31);
             this.buttonInheritance.TabIndex = 1;
             this.buttonInheritance.Text = "Inheritance";
             this.buttonInheritance.UseVisualStyleBackColor = true;
             this.buttonInheritance.Click += new System.EventHandler(this.buttonInheritance_Click);
-            
             // 
             // buttonAssociation
             // 
-            this.buttonAssociation.Location = new System.Drawing.Point(18, 144);
-            this.buttonAssociation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAssociation.Location = new System.Drawing.Point(12, 86);
             this.buttonAssociation.Name = "buttonAssociation";
-            this.buttonAssociation.Size = new System.Drawing.Size(146, 51);
-            this.buttonAssociation.Location = new System.Drawing.Point(14, 115);
-            this.buttonAssociation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAssociation.Name = "buttonAssociation";
-            this.buttonAssociation.Size = new System.Drawing.Size(117, 41);
+            this.buttonAssociation.Size = new System.Drawing.Size(102, 31);
             this.buttonAssociation.TabIndex = 2;
             this.buttonAssociation.Text = "Association";
             this.buttonAssociation.UseVisualStyleBackColor = true;
             this.buttonAssociation.Click += new System.EventHandler(this.buttonAssociation_Click);
-            
             // 
             // buttonRealization
             // 
-            this.buttonRealization.Location = new System.Drawing.Point(18, 205);
-            this.buttonRealization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRealization.Location = new System.Drawing.Point(12, 123);
             this.buttonRealization.Name = "buttonRealization";
-            this.buttonRealization.Size = new System.Drawing.Size(146, 51);
-            this.buttonRealization.Location = new System.Drawing.Point(14, 164);
-            this.buttonRealization.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonRealization.Name = "buttonRealization";
-            this.buttonRealization.Size = new System.Drawing.Size(117, 41);
+            this.buttonRealization.Size = new System.Drawing.Size(102, 31);
             this.buttonRealization.TabIndex = 3;
             this.buttonRealization.Text = "Realization";
             this.buttonRealization.UseVisualStyleBackColor = true;
             this.buttonRealization.Click += new System.EventHandler(this.buttonRealization_Click);
-          
             // 
             // buttonComposition
             // 
-            this.buttonComposition.Location = new System.Drawing.Point(18, 266);
-            this.buttonComposition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonComposition.Location = new System.Drawing.Point(12, 160);
             this.buttonComposition.Name = "buttonComposition";
-            this.buttonComposition.Size = new System.Drawing.Size(146, 51);
-            this.buttonComposition.Location = new System.Drawing.Point(14, 213);
-            this.buttonComposition.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonComposition.Name = "buttonComposition";
-            this.buttonComposition.Size = new System.Drawing.Size(117, 41);
+            this.buttonComposition.Size = new System.Drawing.Size(102, 31);
             this.buttonComposition.TabIndex = 4;
             this.buttonComposition.Text = "Composition";
             this.buttonComposition.UseVisualStyleBackColor = true;
             this.buttonComposition.Click += new System.EventHandler(this.buttonComposition_Click);
-            
             // 
             // buttonAggregation
             // 
-            this.buttonAggregation.Location = new System.Drawing.Point(18, 329);
-            this.buttonAggregation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAggregation.Location = new System.Drawing.Point(12, 197);
             this.buttonAggregation.Name = "buttonAggregation";
-            this.buttonAggregation.Size = new System.Drawing.Size(146, 51);
-            this.buttonAggregation.Location = new System.Drawing.Point(14, 263);
-            this.buttonAggregation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAggregation.Name = "buttonAggregation";
-            this.buttonAggregation.Size = new System.Drawing.Size(117, 41);
+            this.buttonAggregation.Size = new System.Drawing.Size(102, 31);
             this.buttonAggregation.TabIndex = 5;
             this.buttonAggregation.Text = "Aggregation";
             this.buttonAggregation.UseVisualStyleBackColor = true;
             this.buttonAggregation.Click += new System.EventHandler(this.buttonAggregation_Click);
-            
             // 
             // buttonRectangle
             // 
-            this.buttonRectangle.Location = new System.Drawing.Point(18, 440);
-            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRectangle.Location = new System.Drawing.Point(10, 234);
             this.buttonRectangle.Name = "buttonRectangle";
-            this.buttonRectangle.Size = new System.Drawing.Size(146, 51);
-            this.buttonRectangle.Location = new System.Drawing.Point(12, 312);
-            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonRectangle.Name = "buttonRectangle";
-            this.buttonRectangle.Size = new System.Drawing.Size(117, 41);
+            this.buttonRectangle.Size = new System.Drawing.Size(102, 31);
             this.buttonRectangle.TabIndex = 6;
             this.buttonRectangle.Text = "Rectangle";
             this.buttonRectangle.UseVisualStyleBackColor = true;
             this.buttonRectangle.Click += new System.EventHandler(this.buttonRectangle_Click);
-           
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(186, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(120, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(954, 710);
-            this.pictureBox1.Location = new System.Drawing.Point(149, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(624, 568);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 426);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            
             // 
             // CreateNewClassButton
             // 
-            this.CreateNewClassButton.Location = new System.Drawing.Point(18, 521);
-            this.CreateNewClassButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CreateNewClassButton.Location = new System.Drawing.Point(12, 271);
             this.CreateNewClassButton.Name = "CreateNewClassButton";
-            this.CreateNewClassButton.Size = new System.Drawing.Size(146, 51);
+            this.CreateNewClassButton.Size = new System.Drawing.Size(102, 31);
             this.CreateNewClassButton.TabIndex = 8;
             this.CreateNewClassButton.Text = "NewClass";
             this.CreateNewClassButton.UseVisualStyleBackColor = true;
             this.CreateNewClassButton.Click += new System.EventHandler(this.CreateNewClassButton_Click);
-            
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Location = new System.Drawing.Point(18, 694);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(146, 51);
-            this.buttonClear.TabIndex = 9;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
-            
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 750);
-            this.Controls.Add(this.buttonClear);
-            this.CreateNewClassButton.Location = new System.Drawing.Point(14, 361);
-            this.CreateNewClassButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CreateNewClassButton.Name = "CreateNewClassButton";
-            this.CreateNewClassButton.Size = new System.Drawing.Size(117, 41);
-            this.CreateNewClassButton.TabIndex = 8;
-            this.CreateNewClassButton.Text = "NewClass";
-            this.CreateNewClassButton.UseVisualStyleBackColor = true;
-            this.CreateNewClassButton.Click += new System.EventHandler(this.CreateNewClassButton_Click);
-           
             // 
             // Clearbutton
             // 
-            this.Clearbutton.Location = new System.Drawing.Point(785, 28);
-            this.Clearbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Clearbutton.Location = new System.Drawing.Point(687, 21);
             this.Clearbutton.Name = "Clearbutton";
-            this.Clearbutton.Size = new System.Drawing.Size(117, 41);
+            this.Clearbutton.Size = new System.Drawing.Size(102, 31);
             this.Clearbutton.TabIndex = 9;
             this.Clearbutton.Text = "Clear";
             this.Clearbutton.UseVisualStyleBackColor = true;
             this.Clearbutton.Click += new System.EventHandler(this.buttonClear_Click);
-           
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
-            
+            this.ClientSize = new System.Drawing.Size(809, 449);
             this.Controls.Add(this.Clearbutton);
             this.Controls.Add(this.CreateNewClassButton);
             this.Controls.Add(this.pictureBox1);
@@ -241,12 +147,6 @@ namespace WeaklySmartUMLMaker
             this.Controls.Add(this.buttonRealization);
             this.Controls.Add(this.buttonAssociation);
             this.Controls.Add(this.buttonInheritance);
-            this.Controls.Add(this.buttonFillArrow);
-
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -256,8 +156,6 @@ namespace WeaklySmartUMLMaker
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonFillArrow;
         private System.Windows.Forms.Button buttonInheritance;
         private System.Windows.Forms.Button buttonAssociation;
         private System.Windows.Forms.Button buttonRealization;
@@ -266,7 +164,6 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.Button buttonRectangle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button CreateNewClassButton;
-        private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button Clearbutton;
 
     }
