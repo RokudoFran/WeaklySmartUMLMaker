@@ -38,6 +38,7 @@ namespace WeaklySmartUMLMaker
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CreateNewClassButton = new System.Windows.Forms.Button();
             this.Clearbutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +134,22 @@ namespace WeaklySmartUMLMaker
             this.Clearbutton.UseVisualStyleBackColor = true;
             this.Clearbutton.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(703, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 449);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Clearbutton);
             this.Controls.Add(this.CreateNewClassButton);
             this.Controls.Add(this.pictureBox1);
@@ -165,7 +177,7 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button CreateNewClassButton;
         private System.Windows.Forms.Button Clearbutton;
-
+        private System.Windows.Forms.Button button1;
     }
 }
 

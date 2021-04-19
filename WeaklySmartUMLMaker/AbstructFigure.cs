@@ -20,6 +20,11 @@ namespace WeaklySmartUMLMaker
         }
 
         public abstract void Draw(Point start, Point finish);
+
+        internal void Draw(Graphics graphics)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

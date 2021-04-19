@@ -30,6 +30,13 @@ namespace WeaklySmartUMLMaker
         ActionType _crntArrow;
         FigureFabric _fabric;
         Holst _holst;
+        List<AbstructFigure> arrows;
+        AbstructFigure _crnArrow;
+        Bitmap _mainBitmap;
+        Bitmap _tmpBitmap;
+        Graphics _graphics;
+
+
 
 
         public MainForm()
@@ -39,7 +46,8 @@ namespace WeaklySmartUMLMaker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            _holst=Holst.GetHolst();
+            arrows = new List<AbstructFigure>(); 
+            _holst =Holst.GetHolst();
             _holst.SetPictureBox(pictureBox1);
         }
 
@@ -68,6 +76,8 @@ namespace WeaklySmartUMLMaker
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             _holst.UpdateBitmap();
+            arrows.Add(_crnArrow);
+
         }
 
         private void cretFabric()
@@ -113,6 +123,21 @@ namespace WeaklySmartUMLMaker
         private void buttonClear_Click(object sender, EventArgs e)
         {
             _holst.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            _graphics = Graphics.FromImage(_mainBitmap);
+            _graphics.Clear(Color.White);
+
+            foreach (AbstructFigure a in arrows)
+            {
+                a.Draw(_graphics);
+            }
+
+
+            pictureBox1.Image = _mainBitmap;
         }
     }
 }
