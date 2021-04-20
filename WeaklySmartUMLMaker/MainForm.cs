@@ -32,9 +32,6 @@ namespace WeaklySmartUMLMaker
         Holst _holst;
         List<AbstructFigure> arrows;
         AbstructFigure _crnArrow;
-        Bitmap _mainBitmap;
-        Bitmap _tmpBitmap;
-        Graphics _graphics;
 
 
 
@@ -55,6 +52,8 @@ namespace WeaklySmartUMLMaker
         {
             startPoint = e.Location;
             cretFabric();
+            _crnArrow = _fabric.CreateFigure();
+            _crnArrow.StartPoint = e.Location;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -63,9 +62,10 @@ namespace WeaklySmartUMLMaker
             {
                 _holst.GetGraphics();
 
-                if (_fabric != null)
+                if (_crnArrow != null)
                 {
-                    _fabric.Draw(startPoint, e.Location);
+                    _crnArrow.FinishPoint = e.Location;
+                    _crnArrow.Draw();
                 }
 
                 _holst.UpdatePictureBox();
@@ -76,8 +76,8 @@ namespace WeaklySmartUMLMaker
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             _holst.UpdateBitmap();
-            arrows.Add(_crnArrow);
 
+            arrows.Add(_crnArrow);
         }
 
         private void cretFabric()
@@ -127,17 +127,17 @@ namespace WeaklySmartUMLMaker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _graphics = Graphics.FromImage(_mainBitmap);
-            _graphics.Clear(Color.White);
-
+            _holst.SaveBitmap();
+            //_mainBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            //_graphics = Graphics.FromImage(_mainBitmap);
+            //_graphics.Clear(Color.White);
             foreach (AbstructFigure a in arrows)
             {
-                a.Draw(_graphics);
+                a.Draw();
             }
 
+            _holst.SavePictureBox();
 
-            pictureBox1.Image = _mainBitmap;
         }
     }
 }

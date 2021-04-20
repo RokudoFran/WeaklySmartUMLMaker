@@ -20,6 +20,7 @@ namespace WeaklySmartUMLMaker
 
         private Bitmap _tmpBitmap;
         private Bitmap _mainBitmap;
+        private Bitmap _newTmpBitmap;
         private PictureBox _pictureBox;
         private static Holst _holst;
 
@@ -83,6 +84,18 @@ namespace WeaklySmartUMLMaker
             _tmpBitmap = new Bitmap(_pictureBox.Width, _pictureBox.Height);
             _pictureBox.Image = _mainBitmap;
         }
-   }
+
+        public void SaveBitmap()
+        {
+            _newTmpBitmap = (Bitmap)_mainBitmap.Clone();
+            holstGraphics = Graphics.FromImage(_newTmpBitmap);
+            //holstGraphics.Clear(Color.Red);
+        }
+
+        public void SavePictureBox()
+        {
+            _pictureBox.Image = _newTmpBitmap;
+        }
+    }
 }
 

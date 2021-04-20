@@ -17,10 +17,9 @@ namespace WeaklySmartUMLMaker
 
         SolidBrush blackBrush = new SolidBrush(Color.Black);
         public CompositionPolygon()
-            : base()
         {
         }
-        public override void Draw(Point start, Point finish)
+        public override void Draw()
         {
             var pen = Holst.holstPen;
             var gr = Holst.holstGraphics;
@@ -28,7 +27,7 @@ namespace WeaklySmartUMLMaker
             int width = 15;
             int height = 24;
 
-            float d = Convert.ToSingle(Math.Sqrt(Math.Pow(finish.X - start.X, 2) + Math.Pow(finish.Y - start.Y, 2)));
+            float d = Convert.ToSingle(Math.Sqrt(Math.Pow(FinishPoint.X - StartPoint.X, 2) + Math.Pow(FinishPoint.Y - StartPoint.Y, 2)));
 
             /*if (isDash == true) 
             { 
@@ -36,25 +35,25 @@ namespace WeaklySmartUMLMaker
                 pen.DashPattern = dashPattern; 
             }*/
 
-            float X = finish.X - start.X;
-            float Y = finish.Y - start.Y;
+            float X = FinishPoint.X - StartPoint.X;
+            float Y = FinishPoint.Y - StartPoint.Y;
 
-            float X3 = finish.X - (X / d) * height;
-            float Y3 = finish.Y - (Y / d) * height;
-            float X6 = finish.X - (X / d) * height * 2;
-            float Y6 = finish.Y - (Y / d) * height * 2;
+            float X3 = FinishPoint.X - (X / d) * height;
+            float Y3 = FinishPoint.Y - (Y / d) * height;
+            float X6 = FinishPoint.X - (X / d) * height * 2;
+            float Y6 = FinishPoint.Y - (Y / d) * height * 2;
 
-            float Xp = finish.Y - start.Y;
-            float Yp = start.X - finish.X;
+            float Xp = FinishPoint.Y - StartPoint.Y;
+            float Yp = StartPoint.X - FinishPoint.X;
 
             float X4 = X3 + (Xp / d) * width;
             float Y4 = Y3 + (Yp / d) * width;
             float X5 = X3 - (Xp / d) * width;
             float Y5 = Y3 - (Yp / d) * width;
-            float X1 = start.X;
-            float Y1 = start.Y;
-            float X2 = finish.X;
-            float Y2 = finish.Y;
+            float X1 = StartPoint.X;
+            float Y1 = StartPoint.Y;
+            float X2 = FinishPoint.X;
+            float Y2 = FinishPoint.Y;
             gr.DrawLine(pen, X1, Y1, X6, Y6);
             //pen.DashStyle = DashStyle.Solid; 
 

@@ -13,21 +13,23 @@ namespace WeaklySmartUMLMaker
 {
     public abstract class AbstructFigure
     {
-        public Pen Pen { get; set; }
-        public Graphics Graphics { get; set; }
+        public Point StartPoint { get; set; }
+        public Point FinishPoint { get; set; }
 
-        public AbstructFigure(Pen pen, Graphics graphics)
+        public AbstructFigure()
         {
-            Pen = pen;
-            Graphics = graphics;
+            StartPoint = new Point();
+            FinishPoint = new Point();
+        }
+        public AbstructFigure(Point start, Point finish)
+        {
+            StartPoint = start;
+            FinishPoint = finish;
         }
 
-        public abstract void Draw(Point start, Point finish);
+        public abstract void Draw();
 
-        internal void Draw(Graphics graphics)
-        {
-            throw new NotImplementedException();
-        }
+        //internal abstract void Draw();
     }
 
 

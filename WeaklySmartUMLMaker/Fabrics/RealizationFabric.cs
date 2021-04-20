@@ -9,7 +9,7 @@ namespace WeaklySmartUMLMaker.Fabrics
 
     public class RealizationFabric : FigureFabric
     {
-        protected override AbstructFigure CreateFigure()
+        public override AbstructFigure CreateFigure()
         {
             return new RealizationArrow();
         }

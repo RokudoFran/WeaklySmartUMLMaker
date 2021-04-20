@@ -8,7 +8,7 @@ namespace WeaklySmartUMLMaker.Fabrics
 {
     public class CreateNewClassFabric : FigureFabric
     {
-        protected override AbstructFigure CreateFigure()
+        public override AbstructFigure CreateFigure()
         {
             return new CreateNewClass();
         }

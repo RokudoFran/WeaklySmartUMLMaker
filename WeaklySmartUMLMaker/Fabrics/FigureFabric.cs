@@ -9,16 +9,18 @@ namespace WeaklySmartUMLMaker
 {
     public abstract  class FigureFabric
     {
-        protected abstract AbstructFigure CreateFigure();
+        public abstract AbstructFigure CreateFigure();
 
         private AbstructFigure _figure;
 
-        public void Draw(Point start, Point finish)
+        public void Draw()
         {
-            if(_figure == null)
+            if (_figure == null)
+            {
                 _figure = CreateFigure();
+            }
 
-            _figure.Draw(start, finish);
+            _figure.Draw();
         }
         
     }
