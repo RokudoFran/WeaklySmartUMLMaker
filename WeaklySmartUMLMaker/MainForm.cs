@@ -139,5 +139,10 @@ namespace WeaklySmartUMLMaker
             _holst.SavePictureBox();
 
         }
+
+        private void Refactoring_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

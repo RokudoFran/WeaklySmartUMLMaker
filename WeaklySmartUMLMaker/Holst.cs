@@ -53,7 +53,6 @@ namespace WeaklySmartUMLMaker
 
         public void GetGraphics()
         {
-            Trace.WriteLine("GetGraphics");
             _tmpBitmap = (Bitmap)_mainBitmap.Clone();
             holstGraphics = Graphics.FromImage(_tmpBitmap);
             //GC.Collect();
@@ -64,7 +63,6 @@ namespace WeaklySmartUMLMaker
 
         public void UpdateBitmap()
         {
-            Trace.WriteLine("Update");
             _mainBitmap = _tmpBitmap;
             _pictureBox.Image = _mainBitmap;
             //_tmpBitmap = new Bitmap(_pictureBox.Width, _pictureBox.Height);
@@ -72,7 +70,6 @@ namespace WeaklySmartUMLMaker
 
         public void UpdatePictureBox()
         {
-            Trace.WriteLine("UpdatePictureBox");
             holstGraphics.DrawImage(_tmpBitmap, 0, 0);
     
             _pictureBox.Image = _tmpBitmap;
