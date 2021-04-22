@@ -14,9 +14,15 @@ namespace WeaklySmartUMLMaker
 {
    public class Holst
    {
-        public static Graphics holstGraphics { get; set; }
+        public Graphics holstGraphics { get; set; }
 
-        public static Pen holstPen { get; set; }
+        public Pen holstPen { get; set; }
+
+        public Color holstColor { get; set; }
+
+        public int holstWidth { get; set; }
+
+        public SolidBrush holstBrush { get; set; }
 
         private Bitmap _tmpBitmap;
         private Bitmap _mainBitmap;
@@ -26,7 +32,15 @@ namespace WeaklySmartUMLMaker
 
         private Holst()
         {
-            holstPen = new Pen(Color.Black, 3);
+            //holstPen = new Pen(Color.Black, 1);
+
+            ////holstBrush = new Brush(Color.Black);
+            holstBrush = new SolidBrush(Color.Black);
+
+            holstColor = Color.Black;
+            holstWidth = 1;
+            holstPen = new Pen(holstColor, holstWidth);
+
         }
 
         public void SetPictureBox(PictureBox pictureBox)

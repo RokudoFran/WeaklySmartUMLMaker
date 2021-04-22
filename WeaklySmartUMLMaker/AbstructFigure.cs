@@ -16,6 +16,11 @@ namespace WeaklySmartUMLMaker
         public Point StartPoint { get; set; }
         public Point FinishPoint { get; set; }
 
+        public Color AbsColor { get; set; }
+
+        public int AbsWidth { get; set; }
+
+
         public AbstructFigure()
         {
             StartPoint = new Point();

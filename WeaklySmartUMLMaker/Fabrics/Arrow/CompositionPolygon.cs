@@ -13,16 +13,18 @@ namespace WeaklySmartUMLMaker
 {
     public class CompositionPolygon : AbstructFigure
     {
-        private Brush Brush { get; set; }
+        //private Brush Brush { get; set; }
 
-        SolidBrush blackBrush = new SolidBrush(Color.Black);
+        //SolidBrush blackBrush = new SolidBrush(Color.Black);
         public CompositionPolygon()
         {
         }
         public override void Draw()
         {
-            var pen = Holst.holstPen;
-            var gr = Holst.holstGraphics;
+            Holst holst = Holst.GetHolst();
+            var pen = new Pen(AbsColor, AbsWidth);
+            var gr = holst.holstGraphics;
+            var br = holst.holstBrush;
 
             int width = 15;
             int height = 24;
@@ -65,7 +67,7 @@ namespace WeaklySmartUMLMaker
 
             // Draw polygon to screen. 
             //SolidBrush blackBrush = new SolidBrush(Color.Black);
-            gr.FillPolygon(blackBrush, curvePoints);
+            gr.FillPolygon(br, curvePoints);
         }
     }
 }

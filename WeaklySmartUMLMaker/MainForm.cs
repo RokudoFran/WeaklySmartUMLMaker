@@ -39,6 +39,7 @@ namespace WeaklySmartUMLMaker
         public MainForm()
         {
             InitializeComponent();
+            TrackBar trackBar1 = new TrackBar();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -54,6 +55,8 @@ namespace WeaklySmartUMLMaker
             cretFabric();
             _crnArrow = _fabric.CreateFigure();
             _crnArrow.StartPoint = e.Location;
+            _crnArrow.AbsWidth = trackBar1.Value;
+            _crnArrow.AbsColor = colorDialog1.Color;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -137,6 +140,25 @@ namespace WeaklySmartUMLMaker
             }
 
             _holst.SavePictureBox();
+
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            _holst.holstPen = new Pen(colorDialog1.Color, trackBar1.Value);
+        }
+
+        private void buttonColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            _holst.holstPen = new Pen(colorDialog1.Color, trackBar1.Value);
+            _holst.holstBrush = new SolidBrush(colorDialog1.Color);
+            this.BackColor = colorDialog1.Color;
+        }
+
+        private void buttonFont_Click(object sender, EventArgs e)
+        {
 
         }
     }
