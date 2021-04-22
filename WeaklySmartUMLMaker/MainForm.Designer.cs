@@ -39,7 +39,11 @@ namespace WeaklySmartUMLMaker
             this.CreateNewClassButton = new System.Windows.Forms.Button();
             this.Clearbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.buttonColor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonInheritance
@@ -126,7 +130,7 @@ namespace WeaklySmartUMLMaker
             // 
             // Clearbutton
             // 
-            this.Clearbutton.Location = new System.Drawing.Point(687, 21);
+            this.Clearbutton.Location = new System.Drawing.Point(693, 23);
             this.Clearbutton.Name = "Clearbutton";
             this.Clearbutton.Size = new System.Drawing.Size(102, 31);
             this.Clearbutton.TabIndex = 9;
@@ -144,11 +148,38 @@ namespace WeaklySmartUMLMaker
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(693, 137);
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.TabIndex = 11;
+            this.trackBar1.Value = 1;
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
+            // 
+            // buttonColor
+            // 
+            this.buttonColor.Location = new System.Drawing.Point(703, 188);
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.Size = new System.Drawing.Size(75, 23);
+            this.buttonColor.TabIndex = 12;
+            this.buttonColor.Text = "color";
+            this.buttonColor.UseVisualStyleBackColor = true;
+            this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
+            this.button1.Click += button1_Click;
+            // расширенное окно для выбора цвета
+            this.colorDialog1.FullOpen = true;
+            // установка начального цвета для colorDialog
+            this.colorDialog1.Color = this.BackColor;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 449);
+            this.Controls.Add(this.buttonColor);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Clearbutton);
             this.Controls.Add(this.CreateNewClassButton);
@@ -163,7 +194,9 @@ namespace WeaklySmartUMLMaker
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -178,6 +211,9 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.Button CreateNewClassButton;
         private System.Windows.Forms.Button Clearbutton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button buttonColor;
     }
 }
 
