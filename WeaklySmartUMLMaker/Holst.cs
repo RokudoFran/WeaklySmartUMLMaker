@@ -14,9 +14,13 @@ namespace WeaklySmartUMLMaker
 {
    public class Holst
    {
-        public static Graphics holstGraphics { get; set; }
+        public Graphics holstGraphics { get; set; }
 
         public Pen holstPen { get; set; }
+
+        public Color holstColor { get; set; }
+
+        public int holstWidth { get; set; }
 
         public SolidBrush holstBrush { get; set; }
 
@@ -28,10 +32,14 @@ namespace WeaklySmartUMLMaker
 
         private Holst()
         {
-            holstPen = new Pen(Color.Black, 1);
+            //holstPen = new Pen(Color.Black, 1);
 
-            //holstBrush = new Brush(Color.Black);
+            ////holstBrush = new Brush(Color.Black);
             holstBrush = new SolidBrush(Color.Black);
+
+            holstColor = Color.Black;
+            holstWidth = 1;
+            holstPen = new Pen(holstColor, holstWidth);
 
         }
 

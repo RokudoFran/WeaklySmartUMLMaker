@@ -43,6 +43,8 @@ namespace WeaklySmartUMLMaker
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.buttonColor = new System.Windows.Forms.Button();
+            this.buttonFont = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -188,12 +190,26 @@ namespace WeaklySmartUMLMaker
             this.buttonColor.Text = "Choose a color";
             this.buttonColor.UseVisualStyleBackColor = true;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
+            this.buttonColor.Click += button1_Click;
+            // добавляем возможность выбора цвета шрифта
+            fontDialog1.ShowColor = true;
+            // 
+            // buttonFont
+            // 
+            this.buttonFont.Location = new System.Drawing.Point(693, 205);
+            this.buttonFont.Name = "buttonFont";
+            this.buttonFont.Size = new System.Drawing.Size(104, 27);
+            this.buttonFont.TabIndex = 13;
+            this.buttonFont.Text = "Choose a font";
+            this.buttonFont.UseVisualStyleBackColor = true;
+            this.buttonFont.Click += new System.EventHandler(this.buttonFont_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 449);
+            this.Controls.Add(this.buttonFont);
             this.Controls.Add(this.buttonColor);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button1);
@@ -230,6 +246,8 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button buttonColor;
+        private System.Windows.Forms.Button buttonFont;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 

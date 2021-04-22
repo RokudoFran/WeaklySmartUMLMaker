@@ -55,6 +55,8 @@ namespace WeaklySmartUMLMaker
             cretFabric();
             _crnArrow = _fabric.CreateFigure();
             _crnArrow.StartPoint = e.Location;
+            _crnArrow.AbsWidth = trackBar1.Value;
+            _crnArrow.AbsColor = colorDialog1.Color;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -153,6 +155,11 @@ namespace WeaklySmartUMLMaker
             _holst.holstPen = new Pen(colorDialog1.Color, trackBar1.Value);
             _holst.holstBrush = new SolidBrush(colorDialog1.Color);
             this.BackColor = colorDialog1.Color;
+        }
+
+        private void buttonFont_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
