@@ -19,8 +19,11 @@ namespace WeaklySmartUMLMaker
 
         public override void Draw()
         {
-            //Holst.holstGraphics.DrawRectangle(Holst.holstPen,
-            //    StartPoint.X, StartPoint.Y, (FinishPoint.X - StartPoint.X), (FinishPoint.Y - StartPoint.Y));
+            Holst holst = Holst.GetHolst();
+            var pen = holst.holstPen;
+
+            Holst.holstGraphics.DrawRectangle(holst.holstPen,
+                StartPoint.X, StartPoint.Y, (FinishPoint.X - StartPoint.X), (FinishPoint.Y - StartPoint.Y));
         }
     }
 }

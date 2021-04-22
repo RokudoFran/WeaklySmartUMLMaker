@@ -28,7 +28,7 @@ namespace WeaklySmartUMLMaker
 
         private Holst()
         {
-            holstPen = new Pen(Color.Black, 3);
+            holstPen = new Pen(Color.Black, 1);
 
             //holstBrush = new Brush(Color.Black);
             holstBrush = new SolidBrush(Color.Black);
