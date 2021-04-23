@@ -40,6 +40,7 @@ namespace WeaklySmartUMLMaker
             this.Clearbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Refactoring = new System.Windows.Forms.Button();
+            this.Collection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,11 +156,22 @@ namespace WeaklySmartUMLMaker
             this.Refactoring.UseVisualStyleBackColor = true;
             this.Refactoring.Click += new System.EventHandler(this.Refactoring_Click);
             // 
+            // Collection
+            // 
+            this.Collection.Location = new System.Drawing.Point(12, 308);
+            this.Collection.Name = "Collection";
+            this.Collection.Size = new System.Drawing.Size(102, 31);
+            this.Collection.TabIndex = 12;
+            this.Collection.Text = "Collection";
+            this.Collection.UseVisualStyleBackColor = true;
+            this.Collection.Click += new System.EventHandler(this.Collection_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 449);
+            this.Controls.Add(this.Collection);
             this.Controls.Add(this.Refactoring);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Clearbutton);
@@ -191,6 +203,7 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.Button Clearbutton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Refactoring;
+        private System.Windows.Forms.Button Collection;
     }
 }
 

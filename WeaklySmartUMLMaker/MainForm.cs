@@ -20,7 +20,8 @@ namespace WeaklySmartUMLMaker
         Composition,
         Aggregation,
         Rectangle,
-        CreateNewClass
+        CreateNewClass,
+        Collection
     }
 
 
@@ -119,6 +120,10 @@ namespace WeaklySmartUMLMaker
         {
             _crntArrow = ActionType.CreateNewClass;
         }
+        private void Collection_Click(object sender, EventArgs e)
+        {
+            _crntArrow = ActionType.Collection;
+        }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -144,5 +149,7 @@ namespace WeaklySmartUMLMaker
         {
 
         }
+
+       
     }
 }
