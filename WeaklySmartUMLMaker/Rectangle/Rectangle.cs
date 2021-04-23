@@ -22,5 +22,6 @@ namespace WeaklySmartUMLMaker
             Holst.holstGraphics.DrawRectangle(Holst.holstPen,
                 StartPoint.X, StartPoint.Y, (FinishPoint.X - StartPoint.X), (FinishPoint.Y - StartPoint.Y));
         }
+        
     }
 }
