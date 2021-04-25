@@ -14,18 +14,25 @@ namespace WeaklySmartUMLMaker
     public abstract class AbstructFigure : IAction
     {
         public Point StartPoint { get; set; }
+
         public Point FinishPoint { get; set; }
+
+        public Color Color { get; set; }
+
+        public int Width { get; set; }
 
         public AbstructFigure()
         {
             StartPoint = new Point();
             FinishPoint = new Point();
         }
+
         public AbstructFigure(Point start, Point finish)
         {
             StartPoint = start;
             FinishPoint = finish;
         }
+
         public bool findFigure(Point point)
         {
             int xMax;
@@ -60,7 +67,6 @@ namespace WeaklySmartUMLMaker
             {
                 return true;
             }
-
             else
             {
                 return false;
@@ -73,8 +79,7 @@ namespace WeaklySmartUMLMaker
         {
             
         }
-        public abstract void Draw();
 
-        
+        public abstract void Draw(); 
     }
 }

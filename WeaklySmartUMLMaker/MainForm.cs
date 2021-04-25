@@ -21,7 +21,8 @@ namespace WeaklySmartUMLMaker
         Aggregation,
         Rectangle,
         CreateNewClass,
-        Move
+        Move,
+        Collection
     }
 
 
@@ -251,6 +252,10 @@ namespace WeaklySmartUMLMaker
         {
             _actionTipe = ActionType.CreateNewClass;
             
+        }
+        private void Collection_Click(object sender, EventArgs e)
+        {
+            _actionTipe = ActionType.Collection;
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

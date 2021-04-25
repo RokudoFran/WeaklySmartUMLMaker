@@ -21,8 +21,9 @@ namespace WeaklySmartUMLMaker
         }
         public override void Draw()
         {
-            var pen = Holst.holstPen;
-            var gr = Holst.holstGraphics;
+            Holst holst = Holst.GetHolst();
+            var pen = new Pen(Color, Width);
+            var gr = holst.holstGraphics;
 
             int width = 15;
             int height = 24;
