@@ -32,6 +32,8 @@ namespace WeaklySmartUMLMaker
         Holst _holst;
         List<AbstructFigure> arrows;
         AbstructFigure _crnArrow;
+        
+
 
 
 
@@ -44,8 +46,8 @@ namespace WeaklySmartUMLMaker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            arrows = new List<AbstructFigure>(); 
-            _holst =Holst.GetHolst();
+            arrows = new List<AbstructFigure>();
+            _holst = Holst.GetHolst();
             _holst.SetPictureBox(pictureBox1);
         }
 
@@ -73,7 +75,7 @@ namespace WeaklySmartUMLMaker
 
                 _holst.UpdatePictureBox();
             }
-            
+
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -88,7 +90,7 @@ namespace WeaklySmartUMLMaker
             _fabric = FigureFabricCreator.GetFabric(_crntArrow);
         }
 
-        
+
         private void buttonInheritance_Click(object sender, EventArgs e)
         {
             _crntArrow = ActionType.Inheritance;
@@ -161,5 +163,36 @@ namespace WeaklySmartUMLMaker
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1 != null)
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Title = "Image1";
+                save.OverwritePrompt = true;
+                save.CheckPathExists = true;
+                save.Filter = " " +
+                    "Image Files(*.JPG) | *.JPG | " +
+                    "Image Files(*.PNG)| *.PNG| " +
+                    "Image Files(*.SVG)| *.SVG ";
+
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        pictureBox1.Image.Save(save.FileName);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Невозможно созранить файл", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        
+
+
+
     }
 }

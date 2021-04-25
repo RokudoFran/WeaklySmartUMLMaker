@@ -45,6 +45,8 @@ namespace WeaklySmartUMLMaker
             this.buttonColor = new System.Windows.Forms.Button();
             this.buttonFont = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.save = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -190,9 +192,6 @@ namespace WeaklySmartUMLMaker
             this.buttonColor.Text = "Choose a color";
             this.buttonColor.UseVisualStyleBackColor = true;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
-            this.buttonColor.Click += button1_Click;
-            // добавляем возможность выбора цвета шрифта
-            fontDialog1.ShowColor = true;
             // 
             // buttonFont
             // 
@@ -204,11 +203,35 @@ namespace WeaklySmartUMLMaker
             this.buttonFont.UseVisualStyleBackColor = true;
             this.buttonFont.Click += new System.EventHandler(this.buttonFont_Click);
             // 
+            // fontDialog1
+            // 
+            this.fontDialog1.ShowColor = true;
+            // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(693, 245);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(109, 23);
+            this.save.TabIndex = 14;
+            this.save.Text = "Save";
+            this.save.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(708, 288);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 449);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.buttonFont);
             this.Controls.Add(this.buttonColor);
             this.Controls.Add(this.trackBar1);
@@ -248,6 +271,8 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.Button buttonColor;
         private System.Windows.Forms.Button buttonFont;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button button2;
     }
 }
 
