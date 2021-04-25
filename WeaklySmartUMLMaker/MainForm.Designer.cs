@@ -29,7 +29,6 @@ namespace WeaklySmartUMLMaker
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.buttonInheritance = new System.Windows.Forms.Button();
             this.buttonAssociation = new System.Windows.Forms.Button();
             this.buttonRealization = new System.Windows.Forms.Button();
@@ -43,21 +42,22 @@ namespace WeaklySmartUMLMaker
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.buttonColor = new System.Windows.Forms.Button();
-            this.buttonFont = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.save = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Refactoring = new System.Windows.Forms.CheckBox();
+            this.buttonMove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonInheritance
             // 
-            this.buttonInheritance.Image = ((System.Drawing.Image)(resources.GetObject("buttonInheritance.Image")));
             this.buttonInheritance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonInheritance.Location = new System.Drawing.Point(10, 12);
+            this.buttonInheritance.Location = new System.Drawing.Point(14, 65);
+            this.buttonInheritance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonInheritance.Name = "buttonInheritance";
-            this.buttonInheritance.Size = new System.Drawing.Size(102, 59);
+            this.buttonInheritance.Size = new System.Drawing.Size(117, 41);
             this.buttonInheritance.TabIndex = 1;
             this.buttonInheritance.Text = "Inheritance";
             this.buttonInheritance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -66,11 +66,10 @@ namespace WeaklySmartUMLMaker
             // 
             // buttonAssociation
             // 
-            this.buttonAssociation.Image = ((System.Drawing.Image)(resources.GetObject("buttonAssociation.Image")));
             this.buttonAssociation.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonAssociation.Location = new System.Drawing.Point(10, 77);
+            this.buttonAssociation.Location = new System.Drawing.Point(14, 115);
             this.buttonAssociation.Name = "buttonAssociation";
-            this.buttonAssociation.Size = new System.Drawing.Size(102, 48);
+            this.buttonAssociation.Size = new System.Drawing.Size(117, 41);
             this.buttonAssociation.TabIndex = 2;
             this.buttonAssociation.Text = "Association";
             this.buttonAssociation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -79,11 +78,10 @@ namespace WeaklySmartUMLMaker
             // 
             // buttonRealization
             // 
-            this.buttonRealization.Image = ((System.Drawing.Image)(resources.GetObject("buttonRealization.Image")));
             this.buttonRealization.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRealization.Location = new System.Drawing.Point(10, 131);
+            this.buttonRealization.Location = new System.Drawing.Point(14, 164);
             this.buttonRealization.Name = "buttonRealization";
-            this.buttonRealization.Size = new System.Drawing.Size(102, 51);
+            this.buttonRealization.Size = new System.Drawing.Size(117, 41);
             this.buttonRealization.TabIndex = 3;
             this.buttonRealization.Text = "Realization";
             this.buttonRealization.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -92,11 +90,10 @@ namespace WeaklySmartUMLMaker
             // 
             // buttonComposition
             // 
-            this.buttonComposition.Image = ((System.Drawing.Image)(resources.GetObject("buttonComposition.Image")));
             this.buttonComposition.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonComposition.Location = new System.Drawing.Point(10, 188);
+            this.buttonComposition.Location = new System.Drawing.Point(14, 213);
             this.buttonComposition.Name = "buttonComposition";
-            this.buttonComposition.Size = new System.Drawing.Size(102, 51);
+            this.buttonComposition.Size = new System.Drawing.Size(117, 41);
             this.buttonComposition.TabIndex = 4;
             this.buttonComposition.Text = "Composition";
             this.buttonComposition.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -105,11 +102,10 @@ namespace WeaklySmartUMLMaker
             // 
             // buttonAggregation
             // 
-            this.buttonAggregation.Image = ((System.Drawing.Image)(resources.GetObject("buttonAggregation.Image")));
             this.buttonAggregation.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonAggregation.Location = new System.Drawing.Point(10, 245);
+            this.buttonAggregation.Location = new System.Drawing.Point(14, 263);
             this.buttonAggregation.Name = "buttonAggregation";
-            this.buttonAggregation.Size = new System.Drawing.Size(102, 52);
+            this.buttonAggregation.Size = new System.Drawing.Size(117, 41);
             this.buttonAggregation.TabIndex = 5;
             this.buttonAggregation.Text = "Aggregation";
             this.buttonAggregation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -118,9 +114,10 @@ namespace WeaklySmartUMLMaker
             // 
             // buttonRectangle
             // 
-            this.buttonRectangle.Location = new System.Drawing.Point(10, 342);
+            this.buttonRectangle.Location = new System.Drawing.Point(11, 312);
+            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonRectangle.Name = "buttonRectangle";
-            this.buttonRectangle.Size = new System.Drawing.Size(102, 31);
+            this.buttonRectangle.Size = new System.Drawing.Size(117, 41);
             this.buttonRectangle.TabIndex = 6;
             this.buttonRectangle.Text = "Rectangle";
             this.buttonRectangle.UseVisualStyleBackColor = true;
@@ -129,9 +126,10 @@ namespace WeaklySmartUMLMaker
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(118, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(137, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 426);
+            this.pictureBox1.Size = new System.Drawing.Size(1775, 1039);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -140,9 +138,10 @@ namespace WeaklySmartUMLMaker
             // 
             // CreateNewClassButton
             // 
-            this.CreateNewClassButton.Location = new System.Drawing.Point(10, 379);
+            this.CreateNewClassButton.Location = new System.Drawing.Point(14, 361);
+            this.CreateNewClassButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CreateNewClassButton.Name = "CreateNewClassButton";
-            this.CreateNewClassButton.Size = new System.Drawing.Size(102, 31);
+            this.CreateNewClassButton.Size = new System.Drawing.Size(117, 41);
             this.CreateNewClassButton.TabIndex = 8;
             this.CreateNewClassButton.Text = "NewClass";
             this.CreateNewClassButton.UseVisualStyleBackColor = true;
@@ -150,9 +149,10 @@ namespace WeaklySmartUMLMaker
             // 
             // Clearbutton
             // 
-            this.Clearbutton.Location = new System.Drawing.Point(693, 24);
+            this.Clearbutton.Location = new System.Drawing.Point(11, 457);
+            this.Clearbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Clearbutton.Name = "Clearbutton";
-            this.Clearbutton.Size = new System.Drawing.Size(102, 31);
+            this.Clearbutton.Size = new System.Drawing.Size(117, 41);
             this.Clearbutton.TabIndex = 9;
             this.Clearbutton.Text = "Clear";
             this.Clearbutton.UseVisualStyleBackColor = true;
@@ -160,9 +160,10 @@ namespace WeaklySmartUMLMaker
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(708, 61);
+            this.button1.Location = new System.Drawing.Point(12, 569);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(86, 31);
             this.button1.TabIndex = 10;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -173,7 +174,7 @@ namespace WeaklySmartUMLMaker
             this.trackBar1.Location = new System.Drawing.Point(693, 154);
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.Size = new System.Drawing.Size(104, 56);
             this.trackBar1.TabIndex = 11;
             this.trackBar1.Value = 1;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -192,16 +193,6 @@ namespace WeaklySmartUMLMaker
             this.buttonColor.Text = "Choose a color";
             this.buttonColor.UseVisualStyleBackColor = true;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
-            // 
-            // buttonFont
-            // 
-            this.buttonFont.Location = new System.Drawing.Point(693, 205);
-            this.buttonFont.Name = "buttonFont";
-            this.buttonFont.Size = new System.Drawing.Size(104, 27);
-            this.buttonFont.TabIndex = 13;
-            this.buttonFont.Text = "Choose a font";
-            this.buttonFont.UseVisualStyleBackColor = true;
-            this.buttonFont.Click += new System.EventHandler(this.buttonFont_Click);
             // 
             // fontDialog1
             // 
@@ -225,14 +216,35 @@ namespace WeaklySmartUMLMaker
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // Refactoring
+            // 
+            this.Refactoring.Location = new System.Drawing.Point(11, 518);
+            this.Refactoring.Name = "Refactoring";
+            this.Refactoring.Size = new System.Drawing.Size(117, 24);
+            this.Refactoring.TabIndex = 0;
+            this.Refactoring.Text = "Refactoring";
+            this.Refactoring.CheckedChanged += new System.EventHandler(this.Refactoring_CheckedChanged);
+            // 
+            // buttonMove
+            // 
+            this.buttonMove.Location = new System.Drawing.Point(11, 664);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonMove.Name = "buttonMove";
+            this.buttonMove.Size = new System.Drawing.Size(117, 41);
+            this.buttonMove.TabIndex = 12;
+            this.buttonMove.Text = "Move";
+            this.buttonMove.UseVisualStyleBackColor = true;
+            this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 449);
+            this.ClientSize = new System.Drawing.Size(970, 748);
+            this.Controls.Add(this.buttonMove);
+            this.Controls.Add(this.Refactoring);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.save);
-            this.Controls.Add(this.buttonFont);
             this.Controls.Add(this.buttonColor);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button1);
@@ -245,6 +257,7 @@ namespace WeaklySmartUMLMaker
             this.Controls.Add(this.buttonRealization);
             this.Controls.Add(this.buttonAssociation);
             this.Controls.Add(this.buttonInheritance);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -266,10 +279,11 @@ namespace WeaklySmartUMLMaker
         private System.Windows.Forms.Button CreateNewClassButton;
         private System.Windows.Forms.Button Clearbutton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox Refactoring;
+        private System.Windows.Forms.Button buttonMove;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button buttonColor;
-        private System.Windows.Forms.Button buttonFont;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button button2;

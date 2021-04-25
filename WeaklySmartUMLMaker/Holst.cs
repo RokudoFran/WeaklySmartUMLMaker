@@ -30,6 +30,8 @@ namespace WeaklySmartUMLMaker
         private PictureBox _pictureBox;
         private static Holst _holst;
 
+        public AbstructFigure CurrentFigure { get; set; }
+
         private Holst()
         {
             //holstPen = new Pen(Color.Black, 1);
@@ -67,18 +69,14 @@ namespace WeaklySmartUMLMaker
 
         public void GetGraphics()
         {
-            Trace.WriteLine("GetGraphics");
             _tmpBitmap = (Bitmap)_mainBitmap.Clone();
             holstGraphics = Graphics.FromImage(_tmpBitmap);
-            //GC.Collect();
-            //GC.SuppressFinalize(this);
-            //GC.Collect();
-            //holstGraphics.Clear(Color.White);
+            
         }
+
 
         public void UpdateBitmap()
         {
-            Trace.WriteLine("Update");
             _mainBitmap = _tmpBitmap;
             _pictureBox.Image = _mainBitmap;
             //_tmpBitmap = new Bitmap(_pictureBox.Width, _pictureBox.Height);
@@ -86,7 +84,6 @@ namespace WeaklySmartUMLMaker
 
         public void UpdatePictureBox()
         {
-            Trace.WriteLine("UpdatePictureBox");
             holstGraphics.DrawImage(_tmpBitmap, 0, 0);
     
             _pictureBox.Image = _tmpBitmap;
@@ -109,6 +106,12 @@ namespace WeaklySmartUMLMaker
         public void SavePictureBox()
         {
             _pictureBox.Image = _newTmpBitmap;
+        }
+
+        public Graphics GetMainGraphics()
+        {
+            holstGraphics = Graphics.FromImage(_mainBitmap);
+            return holstGraphics;
         }
     }
 }

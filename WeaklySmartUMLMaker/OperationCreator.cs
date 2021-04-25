@@ -20,6 +20,7 @@ namespace WeaklySmartUMLMaker
                 {ActionType.Inheritance, typeof( InheritanceFabric) },
                 {ActionType.Realization, typeof( RealizationFabric) },
                 {ActionType.Rectangle, typeof( RectangleFabric) },
+                {ActionType.Collection,typeof(CollectionFabric) },
             };
 
         public static FigureFabric GetFabric(ActionType type)

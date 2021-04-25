@@ -24,6 +24,7 @@ namespace WeaklySmartUMLMaker
             var pen = new Pen(AbsColor, AbsWidth);
             var gr = holst.holstGraphics;
 
+
             int width = 15;
             int height = 24;
 

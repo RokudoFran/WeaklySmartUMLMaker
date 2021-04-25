@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace WeaklySmartUMLMaker
 {
     public class Rectangle : AbstructFigure
@@ -24,6 +25,22 @@ namespace WeaklySmartUMLMaker
 
             holst.holstGraphics.DrawRectangle(holst.holstPen,
                 StartPoint.X, StartPoint.Y, (FinishPoint.X - StartPoint.X), (FinishPoint.Y - StartPoint.Y));
+
+                var gr = holst.holstGraphics;
+
+
+
+                gr.DrawRectangle(pen, StartPoint.X, StartPoint.Y, (FinishPoint.X - StartPoint.X), (FinishPoint.Y - StartPoint.Y));
+
+
+
+                int y1 = (StartPoint.Y + FinishPoint.Y) / 2;
+
+                int y2 = (StartPoint.Y + y1) / 2;
+
+                gr.DrawLine(pen, StartPoint.X, y2, FinishPoint.X, y2);
+
+
         }
     }
 }
